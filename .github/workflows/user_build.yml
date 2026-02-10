@@ -66,7 +66,7 @@ jobs:
           [ ! -f $LIBSSL ] && wget http://nz2.archive.ubuntu.com/ubuntu/pool/main/o/openssl/$LIBSSL
           sudo dpkg -i $LIBSSL
       - name: Install rmkit, flip-link and cargo-make
-        run: cargo binstall cargo-make rmkit flip-link -y
+        run: cargo install cargo-make rmkit flip-link
       - name: Create firmware project
         working-directory: .
         run: rmkit create --keyboard-toml-path ${{ inputs.keyboard_toml_path }} --vial-json-path ${{ inputs.vial_json_path }} --version ${{ inputs.rmk_version }} --target-dir rmk
@@ -103,7 +103,7 @@ jobs:
           [ ! -f $LIBSSL ] && wget http://nz2.archive.ubuntu.com/ubuntu/pool/main/o/openssl/$LIBSSL
           sudo dpkg -i $LIBSSL
       - name: Install rmkit, espflash and espup
-        run: cargo binstall rmkit espflash espup -y
+        run: cargo install rmkit espflash espup
       - name: Prepare esp environment
         run: espup install
       - name: Create firmware project
