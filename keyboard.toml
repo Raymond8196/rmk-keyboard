@@ -41,6 +41,11 @@ combo_max_num = 15
 # Maximum number of keys pressed simultaneously in a combo
 combo_max_length = 4
 
+[vial]
+enabled = true
+# Vial secure unlock is disabled by default
+# secure_unlock = false
+
 [light]
 # All light pins are high-active by default, uncomment if you want it to be low-active
 # capslock.pin = "PB2"
